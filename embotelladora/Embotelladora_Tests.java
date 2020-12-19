@@ -1,17 +1,13 @@
-package embotelladora;
+
 
 import static org.junit.Assert.*;
 import org.junit.*;
 import java.util.*;
-import java.lang.IllegalArgumentException;
-import embotelladora.NoSolution;
+
 
 public class Embotelladora_Tests {
 	/*Caracterizaciones
-	c1: numero de botellas o total negativo
-		b1: numero de botellas pequenas negativo
-		b2: numero de botellas grande negativo
-		b3: numero total negativo
+
 	c2: numero nulo de botellas
 		b1: numero nulo de botellas pequenas
 		b2: numero nulo de botellas grande
@@ -21,39 +17,11 @@ public class Embotelladora_Tests {
 		b3: numero insuficiente de botellas grandes y pequenas
 	*/
 
-	/*c1 b1*/
-	@Test(expected=NoSolution.class)
-	public void negativeNumLilBottlesTest()
-        {
-           int pequenas = -5;
-	   int grandes = 2;
-	   int total = 10;
-           assertEquals("Negative Number Little Bottles Test", Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
-        }
 
-	/*c1 b2*/
-	@Test(expected=NoSolution.class)
-	public void negativeNumBigBottlesTest()
-        {
-           int pequenas = 2;
-	   int grandes = -5;
-	   int total = 2;
-           assertEquals("Negative Number Big Bottles Test", Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
-        }
-
-	/*c1 b3*/
-	@Test(expected=NoSolution.class)
-	public void negativeTotalNumTest()
-        {
-           int pequenas = 2;
-	   int grandes = -5;
-	   int total = 2;
-           assertEquals("Negative Total Number Test", Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
-        }
 
 	/*c2 b1 y c2 b2*/
 	@Test(expected=NoSolution.class)
-	public void nullNumBottlesTest()
+	public void nullNumBottlesTest() throws NoSolution
         {
            int pequenas = 0;
 	   int grandes = 0;
@@ -62,7 +30,7 @@ public class Embotelladora_Tests {
         }
 
 	/*c3 b1*/
-	@Test public void enoughNumBigBottlesTest()
+	@Test public void enoughNumBigBottlesTest() throws NoSolution
         {
            int pequenas = 0;
 	   int grandes = 2;
@@ -71,7 +39,7 @@ public class Embotelladora_Tests {
         }
 
 	/*c3 b2*/
-	@Test public void enoughNumLilBottlesTest()
+	@Test public void enoughNumLilBottlesTest() throws NoSolution
         {
            int pequenas = 5;
 	   int grandes = 1;
@@ -81,7 +49,7 @@ public class Embotelladora_Tests {
 
 	/*c3 b3*/
 	@Test(expected=NoSolution.class)
-	public void notEnoughBottlesTest()
+	public void notEnoughBottlesTest() throws NoSolution
         {
            int pequenas = 2;
 	   int grandes = 1;

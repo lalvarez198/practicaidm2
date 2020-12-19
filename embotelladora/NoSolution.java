@@ -1,6 +1,6 @@
-package embotelladora;
 
-class NoSolution extends Exception{
+
+public class NoSolution extends Exception{
 	String msg;
 
 	NoSolution(String str) {

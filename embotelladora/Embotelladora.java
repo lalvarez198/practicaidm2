@@ -1,4 +1,4 @@
-package embotelladora;
+
 
 
 public class Embotelladora {
@@ -16,7 +16,7 @@ public class Embotelladora {
 
 	public static int calculaBotellasPequenas(int pequenas, int grandes, int total) throws NoSolution {
 		int grandesUsadas = 0;
-		String msg = "hola buenas tardes";
+		String msg = "Sobra liquido";
 		if(grandes != 0 && total >= 5)
 			grandesUsadas = Math.min((int)Math.floor(total/grandes) , grandes);
 		int litrosRestantes = total - grandesUsadas*5;
