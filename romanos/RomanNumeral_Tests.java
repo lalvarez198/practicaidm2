@@ -17,9 +17,9 @@ public class RomanNumeral_Tests {
 
 	/*c1*/
 	@Test(expected=IllegalArgumentException.class)
-	public void nullRomanNumber()
+	public void nullTest()
         {
-           String a = "456";
+           String a = "";
            assertEquals("Null Roman Number", RomanNumeral.convierte(a));
         }
 
