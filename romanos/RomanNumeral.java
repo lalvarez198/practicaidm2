@@ -21,30 +21,23 @@ public class RomanNumeral{
 
 				if(letra == Roman[j]){//SI ENCUENTRA LA LETRA, SUMA, SI NO, LANZA EXCEPCION
 					found = true;
-					suma = suma + valor [j]; //sumar el valor de la letra
+
 
 					if( ant < valor[j] && ant != 0){ //si el valor de letra anterior menor a valor letra   //actual
-						if(valor[j] == 1 || valor[j] == 10 || valor[j] == 100){
-							if(valor[j] == 1 && (ant == 5 || ant == 10)){
+						if(ant == 1 || ant == 10 || ant == 100){
 								suma = suma - ant*2 ;
-							}else{
-								throw new IllegalArgumentException();
-							}
-							if(valor[j] == 10 && (ant == 50 || ant == 100)){
-								suma = suma - ant*2 ;
-							}else{
-								throw new IllegalArgumentException();
-							}
-							if(valor[j] == 100 && (ant == 500 || ant == 1000)){
-								suma = suma - ant*2 ;
+
+							}else	if(ant == 10 && (valor[j] == 50 || valor[j] == 100)){
+									suma = suma - ant*2 ;
+
+							}else	if(ant == 100 && (valor[j] == 500 || ant == 1000)){
+									suma = suma - ant*2 ;
 							}else{
 								throw new IllegalArgumentException();
 							}
 
-						}else{
-							throw new IllegalArgumentException();
 						}
-                    			}
+
 					if (ant == valor[j]){
                         			if(valor[j] == 1 || valor[j] == 10 || valor[j] == 100 || valor[j] == 1000){
   							acum = acum +1;
@@ -56,11 +49,12 @@ public class RomanNumeral{
 						acum = 1;
 					}
 					ant = valor[j];//el dato actual se guarda en anterior
-
+					suma = suma + valor[j];
 				}
-					if(j == Roman.length && found == false){
+					if(j == Roman.length-1 && found == false){
 						throw new IllegalArgumentException();
 					}
+					 //sumar el valor de la letra
 				}
 			}
 
