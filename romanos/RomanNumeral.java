@@ -39,12 +39,15 @@ public class RomanNumeral{
 						}
 
 					if (ant == valor[j]){
-                        			if(valor[j] == 1 || valor[j] == 10 || valor[j] == 100 || valor[j] == 1000){
-  							acum = acum +1;
+        		if(valor[j] == 1 || valor[j] == 10 || valor[j] == 100 || valor[j] == 1000){
+  						acum = acum +1;
+						}else{
+							throw new IllegalArgumentException();
+						}
   							if (acum > 3){
                                   				throw new IllegalArgumentException();
 							}
-						}
+
 					}else{
 						acum = 1;
 					}
@@ -62,6 +65,9 @@ public class RomanNumeral{
 		return suma;
 	}
 
-
+	public static void main(String[] args){
+		String s = "MCDDXLL";
+		System.out.println(convierte(s));
+	}
 
 }
