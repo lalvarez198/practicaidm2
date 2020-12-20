@@ -1,10 +1,6 @@
-package embotelladora;
-
 import static org.junit.Assert.*;
 import org.junit.*;
 import java.util.*;
-import java.lang.IllegalArgumentException;
-import embotelladora.NoSolution;
 
 public class Embotelladora_Tests {
 	/*Caracterizaciones
@@ -23,7 +19,7 @@ public class Embotelladora_Tests {
 
 	/*c1 b1*/
 	@Test(expected=NoSolution.class)
-	public void negativeNumLilBottlesTest()
+	public void negativeNumLilBottlesTest() throws NoSolution
         {
            int pequenas = -5;
 	   int grandes = 2;
@@ -33,7 +29,7 @@ public class Embotelladora_Tests {
 
 	/*c1 b2*/
 	@Test(expected=NoSolution.class)
-	public void negativeNumBigBottlesTest()
+	public void negativeNumBigBottlesTest() throws NoSolution
         {
            int pequenas = 2;
 	   int grandes = -5;
@@ -43,7 +39,7 @@ public class Embotelladora_Tests {
 
 	/*c1 b3*/
 	@Test(expected=NoSolution.class)
-	public void negativeTotalNumTest()
+	public void negativeTotalNumTest() throws NoSolution
         {
            int pequenas = 2;
 	   int grandes = -5;
@@ -53,7 +49,7 @@ public class Embotelladora_Tests {
 
 	/*c2 b1 y c2 b2*/
 	@Test(expected=NoSolution.class)
-	public void nullNumBottlesTest()
+	public void nullNumBottlesTest() throws NoSolution
         {
            int pequenas = 0;
 	   int grandes = 0;
@@ -62,7 +58,7 @@ public class Embotelladora_Tests {
         }
 
 	/*c3 b1*/
-	@Test public void enoughNumBigBottlesTest()
+	@Test public void enoughNumBigBottlesTest() throws NoSolution
         {
            int pequenas = 0;
 	   int grandes = 2;
@@ -71,7 +67,7 @@ public class Embotelladora_Tests {
         }
 
 	/*c3 b2*/
-	@Test public void enoughNumLilBottlesTest()
+	@Test public void enoughNumLilBottlesTest() throws NoSolution
         {
            int pequenas = 5;
 	   int grandes = 1;
@@ -81,7 +77,7 @@ public class Embotelladora_Tests {
 
 	/*c3 b3*/
 	@Test(expected=NoSolution.class)
-	public void notEnoughBottlesTest()
+	public void notEnoughBottlesTest() throws NoSolution
         {
            int pequenas = 2;
 	   int grandes = 1;

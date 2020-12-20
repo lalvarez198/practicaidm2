@@ -1,5 +1,3 @@
-package embotelladora;
-
 class NoSolution extends Exception{
 	String msg;
 
