@@ -7,11 +7,11 @@ public class DescuentoBlackFriday {
 //un descuento de porcentajeDescuento
 // @throws IllegalArgumentException si precioOriginal es negativo o porcentajeDescuento es negativo
 
-	public double precioFinal(double precioOriginal, double porcentajeDescuento, Calendar fecha) throws IllegalArgumentException{
+	public static double precioFinal(double precioOriginal, double porcentajeDescuento, Calendar fecha) throws IllegalArgumentException{
 
 		int mes = fecha.get(Calendar.MONTH);
 		int dia = fecha.get(Calendar.DAY_OF_MONTH);
-		int precioBlackFriday = precioOriginal;
+		double precioBlackFriday = precioOriginal;
 		if(precioOriginal < 0){
 			throw new IllegalArgumentException();
 		}
@@ -22,7 +22,7 @@ public class DescuentoBlackFriday {
 		}
 
 		if(dia == 29 && mes == 11){
-			precioBlackFriday = precioOriginal * (100-porcentajeDescuento)/100);
+			precioBlackFriday = precioOriginal * (100-porcentajeDescuento)/100;
 		}
 
 		return precioBlackFriday;
